@@ -1,0 +1,196 @@
+/* ==========================
+   ROCK PAPER SCISSORS
+   ========================== */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f4f4;
+    text-align: center;
+}
+
+/* Main Container */
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+    padding: 30px;
+}
+
+/* Heading */
+
+h1 {
+    color: #1e3a8a;
+    font-size: 55px;
+    margin-bottom: 40px;
+}
+
+/* ======================
+   Choice Buttons
+   ====================== */
+
+.choices {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.choice-btn {
+    width: 180px;
+    height: 220px;
+
+    background: white;
+
+    border: 3px solid #3498db;
+    border-radius: 20px;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.choice-btn:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    background: #eaf6ff;
+}
+
+.choice-btn img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
+.choice-btn p {
+    margin-top: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* ======================
+   Choice Images
+   ====================== */
+
+#user-image,
+#computer-image{
+    width:120px;
+    height:120px;
+    object-fit:contain;
+    margin:10px 0;
+}
+
+/* ======================
+   Text
+   ====================== */
+
+h2{
+    font-size:40px;
+    color:#222;
+    margin-top:25px;
+}
+
+p{
+    font-size:28px;
+    color:#444;
+}
+
+#result{
+    font-size:38px;
+    font-weight:bold;
+    color:green;
+    margin:20px 0;
+}
+
+#user-score,
+#computer-score{
+    font-size:34px;
+    font-weight:bold;
+    color:#e63946;
+}
+
+/* ======================
+   Reset Button
+   ====================== */
+
+.reset-container{
+    margin-top:40px;
+}
+
+#reset{
+    background:#e74c3c;
+    color:white;
+
+    border:none;
+
+    padding:15px 35px;
+
+    font-size:22px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+#reset:hover{
+    background:#c0392b;
+}
+
+/* ======================
+   Line
+   ====================== */
+
+hr{
+    width:80%;
+    margin:40px auto;
+}
+
+/* ======================
+   Mobile
+   ====================== */
+
+@media(max-width:768px){
+
+    h1{
+        font-size:36px;
+    }
+
+    h2{
+        font-size:28px;
+    }
+
+    p{
+        font-size:22px;
+    }
+
+    .choice-btn{
+        width:150px;
+        height:190px;
+    }
+
+    .choice-btn img{
+        width:80px;
+        height:80px;
+    }
+
+    #result{
+        font-size:28px;
+    }
+
+    #reset{
+        width:220px;
+    }
+
+}
