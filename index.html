@@ -1,68 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rock Paper Scissors Game</title>
-
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ROCK · PAPER · SCISSORS — Arena</title>
+<meta name="description" content="A fast, flashy Rock Paper Scissors arena. Best of 3 or 5. Play now." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800;900&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+<div class="noise"></div>
+<div class="wrap">
 
-    <div class="container">
+  <header>
+    <div class="brand">RPS <b>ARENA</b></div>
+    <button class="sound-toggle" id="soundToggle">🔊 Sound on</button>
+  </header>
 
-        <h1>🎮 Rock Paper Scissors 🎮</h1>
+  <!-- TITLE SCREEN -->
+  <section id="titleScreen">
+    <div class="hero">
+      <h1><span class="s1">ROCK.</span><span class="s2">PAPER.</span><span class="s3">SCISSORS.</span></h1>
+      <p class="tag">No luck involved — just reflexes, nerve, and a little psychology. Pick your best-of, then throw down.</p>
+      <div class="mode-select">
+        <button class="mode-btn active" data-target="3">Best of 3</button>
+        <button class="mode-btn" data-target="5">Best of 5</button>
+        <button class="mode-btn" data-target="7">Best of 7</button>
+      </div>
+      <button class="play-btn" id="startBtn">START MATCH →</button>
+    </div>
+  </section>
 
-        <div class="choices">
-
-    <button id="rock">
-        <img src="images/rock.png" alt="Rock">
-        <p>Rock</p>
-    </button>
-
-    <button id="paper">
-        <img src="images/paper.png" alt="Paper">
-        <p>Paper</p>
-    </button>
-
-    <button id="scissors">
-        <img src="images/scissors.png" alt="Scissors">
-        <p>Scissors</p>
-    </button>
-
-</div>
-
-        <hr>
-
-        <h2>Your Choice</h2>
-        <p id="user-choice">-</p>
-
-        <h2>Computer Choice</h2>
-        <p id="computer-choice">-</p>
-
-        <h2>Result</h2>
-        <p id="result">Let's Play!</p>
-
-        <hr>
-
-        <h2>Score Board</h2>
-
-        <p>👤 You :
-            <span id="user-score">0</span>
-        </p>
-
-        <p>💻 Computer :
-            <span id="computer-score">0</span>
-        </p>
-
-        <button id="reset">🔄 Reset Game</button>
-
+  <!-- ARENA -->
+  <section id="arenaScreen" class="arena hidden">
+    <div class="scoreboard">
+      <div class="score-block you">
+        <div class="label">You</div>
+        <div class="num" id="youScore">0</div>
+      </div>
+      <div>
+        <div class="vs-mini">FIRST TO <span id="targetWins">2</span></div>
+        <div class="streak" id="streakLine">&nbsp;</div>
+      </div>
+      <div class="score-block cpu">
+        <div class="label">CPU</div>
+        <div class="num" id="cpuScore">0</div>
+      </div>
     </div>
 
-    <script src="script.js"></script>
+    <div class="arena-stage">
+      <div class="clash-row" id="clashRow">
+        <div class="combatant you" id="youCombatant">❔</div>
+        <div class="vs-mark">VS</div>
+        <div class="combatant cpu" id="cpuCombatant">❔</div>
+      </div>
+      <div class="countdown" id="countdown">&nbsp;</div>
+      <div class="result-line" id="resultLine">Choose your move</div>
 
+      <div class="picks" id="picksRow">
+        <button class="pick-btn" data-move="rock"><span>🪨</span><span class="key">R</span></button>
+        <button class="pick-btn" data-move="paper"><span>📄</span><span class="key">P</span></button>
+        <button class="pick-btn" data-move="scissors"><span>✂️</span><span class="key">S</span></button>
+      </div>
+    </div>
+
+    <div class="history" id="historyRow"></div>
+  </section>
+
+  <!-- MATCH OVER -->
+  <section id="overScreen" class="match-over hidden">
+    <h2 id="overTitle">YOU WIN</h2>
+    <p id="overSub">Final score 2 – 1</p>
+    <div class="over-actions">
+      <button class="play-btn" id="rematchBtn">REMATCH</button>
+      <button class="ghost-btn" id="menuBtn">Change mode</button>
+    </div>
+  </section>
+
+  <footer>Built for CBIT Hackweek · open source, fork it and make it yours.</footer>
+</div>
+
+<script src="script.js"></script>
 </body>
-
 </html>
